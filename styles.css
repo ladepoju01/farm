@@ -88,8 +88,7 @@
 
     html{
       font-family: 'Habibi', serif;
-      /* margin: auto 10%; */
-      /* min-width: 428px; */
+      /* margin: auto 3%; */
     }
 
     h1,h2,h3{
@@ -128,7 +127,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 35px auto 50px;
+      margin: 35px auto 15px;
     }
 
     nav a{
@@ -154,33 +153,33 @@
 
     h3{
       font-size: 1.25em;
-      margin: 15px; 
+      margin: 25px; 
+      text-align: center;
     }
 
     img{
-      width: 80%;
+      width: 65%;
     }
 
-    .fruit-images, .vegetables-images{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 30px;
+    .fruit-images,.vegetables-images{
+      display: grid;
+      text-align: center;
     }
 
-    .fruit-images p, .vegetables-images p{
-      background-color: var(--black);
+    figcaption{
       color: var(--white);
+      background-color: var(--black);
       opacity: 75%;
       padding: 10px;
-      width: 35%;
-      text-align: center;
+      width: 30%;
       position: relative;
-      bottom: 175px
+      bottom: 130px;
+      left: 120px;
+
     }
 
     #vegetables,#fruits{
-      margin-bottom: -35px;
+      margin: 80px auto -35px;
     }
 
     aside{
@@ -203,10 +202,24 @@
       margin: 5px;
       text-align: center;
     }
+
+    footer a{
+      color: var(--white);
+      background-color: var(--orange);
+      border-radius: 3px;
+      border: 1px solid var(--white);
+      padding: 12px 10px;
+      font-size: .75em;
+      text-decoration: none;
+      position: relative;
+      bottom: 30px;
+      left: 147px;
+    }
+
   }
 
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
-
+/* FINISH THE IMG AND CAPTION SECTION */
 @media screen and (min-width:834px) {
   
   header{
@@ -222,15 +235,99 @@
     flex-direction: row;
   }
 
-  .fruit-images,.vegetables-images{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-start: 1;
-    grid-column-end: 3;
+  .fruit-images, .vegetables-images{
+    grid-template-columns: repeat(2,1fr);
+    gap: 35px 0;
+  }
 
+  img{
+    size: 125%;
+    justify-self: center;
+  }
+
+  #fruit,#vegetables{
+    margin-bottom: 15px;
+  }
+
+  aside{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  footer a{
+    left: 350px;
   }
 
 }
 
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width:1280px) {
+
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0;
+  }
+
+  h1{
+    position: relative;
+    top: 15px;
+  }
+
+  nav{
+    position: absolute;
+    left: 700px;
+    top: 5px;
+    width: 70%;
+  }
+
+  nav a{
+    margin:8px 15px;
+    width: 25%;
+    border: 1px solid var(--white);
+  }
+
+  .fruit-images, .vegetables-images{
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px 0;
+  }
+
+  aside{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .contact,.hours{
+    display: flex;
+    justify-content: space-around;
+  }
+
+.hours h2{
+  position: relative;
+  top: 45px;
+}
+  footer a{
+    left: 600px;
+  }
+  
+}
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width:1440px) {
+  
+  nav{
+    position: absolute;
+    left: 800px;
+    top: 5px;
+    width: 70%;
+  }
+
+  .fruit-images, .vegetables-images{
+    grid-template-columns: repeat(4,1fr);
+    gap: 35px 0;
+  }
+
+  footer a{
+    left: 690px;
+  }
+
+}
